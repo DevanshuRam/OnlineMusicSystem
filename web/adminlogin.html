@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Admin Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            body{
+                background: url('image/1.jpg');
+                background-size: cover;
+                font-family:sans-serif; 
+                color:white;
+            }
+            .home{
+                position: absolute;
+                top:40px;
+                left:20px;
+                width:10%;
+                height:20px;
+                background: none;
+                outline: none;
+                border: 2px solid greenyellow;
+                font-size:20px;
+                color:white;
+                border-radius:30px;
+                padding:15px;
+                text-decoration:none;
+            }
+            .loginbox{
+                position: relative;
+                left:10px;
+                margin-top:30px;
+                width:125px;
+                font-size:22px;
+            }
+            .loginbox h1{
+                color:white;
+                padding:10px 0;
+                width:180px;
+                margin-bottom:20px;
+            }
+            .aname{
+                position: relative;
+                left:10px;
+                top:20px;
+                margin-bottom: 10px;
+                background:none;
+                outline: none;
+                border:2px solid greenyellow;
+                color:white;
+            }
+            .apass{
+                position: relative;
+                top:15px;
+                left:10px;
+                background:none;
+                outline: none;
+                border:2px solid greenyellow;
+                color:white;
+            }
+            .submit{
+                position: relative;
+                top:35px;
+                left:100px;
+                background:none;
+                outline: none;
+                border:2px solid greenyellow;
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <a href="index.html" class="home">Home</a>
+        <div class="action">
+         <form action="" method="POST">
+            <div class="loginbox">
+            <h1 id="usertag">Admin Login</h1>
+            <form action="adminpage.html" method="POST">
+
+            <table  align="center">
+                <tr>
+                    <td>
+                        <h2 class="loginbox">Username:</h2>
+                    </td>
+                    <td><input class="aname" type="text" name="username" placeholder="Enter username"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2 class="loginbox">Password:</h2>
+                    </td>
+                    <td>
+                        <input class="apass" type="password" name="pwd" placeholder="Enter password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <li><a class="submit" href="adminpage.html"> Submit </a></li>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    </body>
+</html>

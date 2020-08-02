@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            *{
+                padding:0px;
+                margin:0px;    
+                box-sizing: border-box;
+            }
+            body{
+                background-image: url('image/1.jpg');
+                background-size: cover;
+                
+            }
+            h1{
+                width:300px;
+                padding-bottom: 10px;
+                margin-top:10px;
+                margin-left: 700px;
+                color:red;
+                
+            }
+            .menubar{
+                margin-top:30px;
+                background:rgb(90,0,10);
+                text-align: center;
+            }
+            .menubar ul{
+                list-style: none;
+                display : inline-flex;
+                color:white;
+            }
+            .menubar ul li{
+                margin:5px;
+                padding:15px;
+                width:200px;
+                font-size:20px;
+            }
+            .menubar ul li a{
+                text-decoration: none;
+                color:white;
+            }
+            .active,.menubar ul li:hover{
+                
+                background-color:#2bab0d;
+                border-radius: 3px;
+            }
+            .menubar .fa{
+                margin-left:8px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>ADMIN PAGE</h1>
+        <div class="menubar">
+            <ul>
+                <li class="active"><a href="addsong.html">Add New Song</a></li>
+                <li><a href="deletesong.html">Delete Song</a></li>
+                <li><a href="updatesong.html">Update Song details</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+    </body>
+</html>
