@@ -6,16 +6,101 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Home Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            *{
+                padding:0px;
+                margin:0px;    
+                box-sizing: border-box;
+            }
+            body{
+                background-image: url('image/1.jpg');
+                background-size: cover;
+                
+            }
+            h1{
+                width:300px;
+                padding-bottom: 10px;
+                margin-top:10px;
+                margin-left: 700px;
+                color:red;
+                
+            }
+            .menubar{
+                margin-top:30px;
+                background:gray;
+                text-align: center;
+            }
+            .menubar ul{
+                list-style: none;
+                display : inline-flex;
+                color:white;
+            }
+            .menubar ul li{
+                margin:5px;
+                padding:15px;
+                width:200px;
+                font-size:20px;
+            }
+            .menubar ul li a{
+                text-decoration: none;
+                color:white;
+            }
+            .active,.menubar ul li:hover{
+                
+                background-color:#2bab0d;
+                border-radius: 3px;
+            }
+            .menubar .fa{
+                margin-left:8px;
+            }
+            .submenu{
+                display:none;
+            }
+            .menubar ul li:hover .submenu{
+                display:block;
+                position:absolute;
+                background-color:grey;
+                margin-top:15px;
+                margin-left:-5px;
+            }
+            .menubar ul li:hover .submenu ul{
+                display:block;
+                margin: 10px;
+            }
+            .menubar ul li:hover .submenu ul li{
+                width:150px;
+                padding-bottom:20px;
+                border-bottom: 1px white solid;
+                background: transparent;
+            }
+            .menubar ul li:hover .submenu ul li:last-child{
+                border-bottom: none;
+            }
+            .menubar ul li:hover .submenu ul li a:hover{
+                color:#b2ff00;
+            }
+        </style>
     </head>
     <body>
-        <ul>
-                <li><a href="createaccount.html">New User</a></li>
-                <li><a href="userlogin.html">User Login</a></li>
-                <li><a href="adminlogin.html">Admin Login</a></li>
+        <h1>MUSIC ON</h1>
+        <div class="menubar">
+            <ul>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Login</a>
+                    <div class="submenu">
+                    <ul>
+                            <li><a href="userlogin.html">User Login</a></li>
+                            <li><a href="adminlogin.html">Admin Login</a></li>
+                    </ul>
+                    </div>
+                </li>
+                <li><a href="createaccount.html">Registration</a></li>
                 <li><a href="index.html">Logout</a></li>
             </ul>
-    </body>
+        </div>
+        </body>
 </html>
