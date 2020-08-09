@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Create Account</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            body{
+                background: url('image/1.jpg');
+                background-size: cover;
+                font-family:sans-serif;
+                color:white;
+            }
+            .home{
+                position: absolute;
+                top:40px;
+                left:20px;
+                width:10%;
+                height:20px;
+                background: none;
+                outline: none;
+                border: 2px solid greenyellow;
+                font-size:20px;
+                color:white;
+                padding:15px;
+                text-decoration:none;
+            }
+            .signin{
+                position: absolute;
+                top:40px;
+                right:20px;
+                width:150px;
+                height:20px;
+                background: none;
+                outline: none;
+                border: 2px solid greenyellow;
+                font-size:20px;
+                color:white;
+                padding: 15px;
+                text-decoration: none;
+            }
+            .registrationbox{
+                width:500px;
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+             }
+            .registrationbox h1{
+                margin-top:10px;
+                padding-bottom: 10px;
+                border-bottom: 6px solid greenyellow;
+                margin-bottom:20px;
+            }
+            .uname{
+                position: relative;
+                left:10px;
+                margin-top:30px;
+                width:125px;
+                font-size:22px;
+            }
+            .name{
+                position: relative;
+                left:10px;
+                top:20px;
+                margin-bottom: 10px;
+                background:none;
+                outline: none;
+                border:2px solid greenyellow;
+                color:white;
+            }
+            .pass{
+                position: relative;
+                top:15px;
+                left:10px;
+                background:none;
+                outline: none;
+                border:2px solid greenyellow;
+                color:white;
+            }
+            .confirmpass{
+                position: relative;
+                top:20px;
+                left:10px;
+                background:none;
+                outline: none;
+                border:2px solid greenyellow;
+                color:white;
+            }
+            .email{
+                position: relative;
+                top:15px;
+                left:10px;
+                background:none;
+                outline: none;
+                border:2px solid greenyellow;
+                color:white;
+            }
+            .submit{
+                position: relative;
+                top:35px;
+                left:-100px;
+                background:none;
+                outline: none;
+                border:2px solid greenyellow;
+                color:white;
+            }
+        </style>
+        <script src="js/userreg.js">
+                
+        </script>
+    </head>
+    <body>
+        <center>
+            <a href="index.html" class="home">Home</a>
+            <a href="userlogin.html" class="signin">Sign In</a>
+            <div class="registrationbox">
+                <h1 class="tag">Registration Form</h1>
+                <form action="index.html" method="POST" onsubmit="return Validate()" name="vform">
+                <table height="400" width="400">
+                    <tr>
+                        <td>
+                            <h2 class="uname">Username:</h2>
+                        </td>
+                        <td>
+                            <input class="name" type="text" name="username" placeholder="Enter the Username">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2 class="uname">Password:</h2>
+                        </td>
+                        <td>
+                            <input class="pass" type="text" name="pwd" placeholder="Enter valid password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2 class="uname">ReEnter password:</h2>
+                        </td>
+                        <td>
+                            <input class="confirmpass" type="text" name="repwd" placeholder="Enter valid password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2 class="uname">Email:</h2>
+                        </td>
+                        <td>
+                            <input class="email" type="email" name="email" placeholder="abcd11@gmail.com">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <center>
+                                <button type="submit" onclick="validate()">Submit</button>
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+                    <div id="pass_verify">
+                        <h3>Password must contain the following:</h3>
+                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="invalid">A <b>number</b></p>
+                        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                    </div>
+                </center>
+            </form>
+        </div>
+    </body>
+</html>
