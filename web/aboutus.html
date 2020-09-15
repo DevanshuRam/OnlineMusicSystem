@@ -9,12 +9,13 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css" type="text/css"/>
     </head>
     <body>
-        <section>
+        <section><br><br>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">
@@ -24,33 +25,170 @@ and open the template in the editor.
                         <h1>Who are we?</h1>
                         <hr>
                         <p>
-                            This is a music on company.....
+                                This is a music on company.....
                         </p>
+                        <button class="btn btn-primary" id="showbtn">Show more</button>
+                        <p id="par1">
+                                Welcome to the world of music...
+                        </p><br>
+                        <button class="btn btn-primary" id="showlessbtn">Show less</button>
                     </div>
                 </div>
             </div>
         </section>
-        <section>
-            <div class="container-fluid">
-                <h1 class="text-center">Contact Us</h1>
-                <hr class="w-25 mx-auto pt-5">
-                <div class="w-50 mx-auto">
-                    <div class="form-group">
-                        <label for="name">Your Name:</label>
-                        <input type="text" class="form-control" placeholder="Enter name" id="name">
+        <section><br><br>
+            
+                <div class="container-fluid">
+                    <h1 class="text-center">Contact Us</h1>
+                    <hr class="w-25 mx-auto pt-5">
+                    <div class="w-50 mx-auto">
+                        <div class="form-group">
+                            <label for="name">Your Name:</label>
+                            <input type="text" class="form-control" placeholder="Enter name" id="name">
+                            <h5 id="namecheck"></h5>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" placeholder="Enter email" id="email">
+                            <h5 id="emailcheck"></h5>
+                        </div>
+                        <div class="form-group">
+                            <label for="textarea">Question :</label>
+                            <textarea class="form-control" id="tarea"></textarea>
+                            <h5 id="tareacheck"></h5>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="submitbtn">Send</button>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" placeholder="Enter email" id="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="textarea">Question :</label>
-                        <textarea class="form-control"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send</button>
-                </div>
-              </div>
-            </div>
+                  </div>
+            
         </section>
+        <script type="text/javascript">
+            
+            $(document).ready(function(){
+                $('#par1').hide();
+                $('#showlessbtn').hide();
+                
+                $('#showbtn').click(function(){
+                   $('#par1').toggle(300); 
+                   $('#showbtn').hide();
+                   $('#showlessbtn').show(300);
+                });
+                
+                $('#showlessbtn').click(function(){
+                   $('#par1').toggle(200); 
+                   $('#showlessbtn').hide();
+                   $('#showbtn').show(300);
+               });
+                $('#namecheck').hide();
+                $('#emailcheck').hide();
+                
+                var name_err = true;
+                var email_err = true;
+                var tarea_err = true;
+                
+                $('#name').keyup(function(){
+                   name_check();
+                });
+                
+                function name_check(){
+                    
+                    var name_val = $('#name').val();
+                    
+                    if(name_val.length == '')
+                    {
+                        $('#namecheck').show();
+                        $('#namecheck').html("Please Fill the Username");
+                        $('#namecheck').focus();
+                        $('#namecheck').css("color","red");
+                        name_err == false;
+                        return false;
+                    }
+                    else
+                    {
+                        $('#namecheck').hide();
+                    }
+                }
+                
+                $('#email').keyup(function(){
+                   email_check();
+                });
+                
+                function email_check()
+                {
+                    var email_val = $('#email').val();
+                    
+                    if(email_val.length == '')
+                    {
+                        $('#emailcheck').show();
+                        $('#emailcheck').html("Please Fill the Email");
+                        $('#emailcheck').focus();
+                        $('#emailcheck').css("color","red");
+                        email_err == false;
+                        return false;
+                    }
+                    else
+                    {
+                        $('#emailcheck').hide();
+                    }
+                    
+                    if(email_val.length < 3)
+                    {
+                        $('#emailcheck').show();
+                        $('#emailcheck').html("Email length must be greater than 3");
+                        $('#emailcheck').focus();
+                        $('#emailcheck').css("color","red");
+                        email_err == false;
+                        return false;
+                    }
+                    else
+                    {
+                        $('#emailcheck').hide();
+                    }
+                }
+                
+                $('#tarea').keyup(function(){
+                   tarea_check();
+                });
+                
+                function tarea_check(){
+                    
+                    var tarea_val = $('#tarea').val();
+                    
+                    if(tarea_val.length == '')
+                    {
+                        $('#tareacheck').show();
+                        $('#tareacheck').html("Please Insert query");
+                        $('#tareacheck').focus();
+                        $('#tareacheck').css("color","red");
+                        name_err == false;
+                        return false;
+                    }
+                    else
+                    {
+                        $('#tareacheck').hide();
+                    }
+                }
+                
+                $('#submitbtn').click(function(){
+                    name_err = true;
+                    email_err = true;
+                    tarea_err = true;
+                    
+                    name_check();
+                    email_check();
+                    tarea_check();
+                    
+                    if((name_err == true) && (email_err == true) && (tarea_err == true))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                });
+                
+            });
+        </script>
     </body>
 </html>
